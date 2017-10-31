@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "My toolbox for WME",
+    "version": "0.1",
+    //
+    "page_action": {
+        "default_title": "My toolbox for WME"
+    },
+    "autor": "abdielisai",
+    "background": {
+        "persistent": false,
+        "page": "background.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.waze.com/*/editor/*",
+				"https://www.waze.com/editor/*",
+                "http://gaia.inegi.org.mx/mdm6/*"
+            ],
+            "js": [
+                "wmeTools.js",
+                "gaiaTools.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "https://www.waze.com/*/editor/*",
+		"https://www.waze.com/editor/*",
+        "http://gaia.inegi.org.mx/mdm6/*",
+        "clipboardRead",
+        "clipboardWrite"
+    ],
+    "externally_connectable": {
+        "matches": [
+                "https://www.waze.com/*/editor/*"
+            ]
+    }
+}
